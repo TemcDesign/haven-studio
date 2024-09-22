@@ -10,10 +10,10 @@ const localeIcons = {
   en: "material-symbols:language-us-rounded",
 };
 
-export default function PublicNavigationLocaleSwitcher() {
+export default function LanguagesSwitcher() {
   const currentLocale = useLocale();
   return (
-    <div className="flex gap-3 py-5">
+    <div>
       {currentLocale !== "es" && <LocaleLink locale="es" />}
       {currentLocale !== "en" && <LocaleLink locale="en" />}
     </div>
@@ -30,7 +30,7 @@ function LocaleLink({ locale }: { locale: Locale }) {
       href={pathname}
       locale={locale}
     >
-      <Icon icon={localeIcons[locale]} width="25" height="25" />
+      <Icon icon={localeIcons[locale]} width="25" height="25" color="white" />
     </Link>
   );
 }
